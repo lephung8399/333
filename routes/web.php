@@ -13,12 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//<-- Admin page -->
+Route::group(['prefix'=>'admin', 'namespace' => 'Admin', "middleware" => "auth"],function(){
+
+    Route::get('/testadmin','admintestController@index');
+
+});
 Route::get('/', function () {
     return view('welcome');
 });
+
 //request password to continue
-Route::get('/user', 'HomeController@user');
-//->middleware('password.confirm')
+Route::get('/user', 'HomeController@user')
+->middleware('password.confirm');
 //Route::get('/user','HomeController@user');
 Route::get('/dangnhap','HomeController@dangnhap');
 
@@ -29,7 +36,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 
 
