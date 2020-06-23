@@ -24,8 +24,8 @@ Route::get('/', function () {
 });
 
 //request password to continue
-Route::get('/user', 'HomeController@user')
-->middleware('password.confirm');
+Route::get('/user', 'HomeController@user');
+//->middleware('password.confirm');
 //Route::get('/user','HomeController@user');
 Route::get('/dangnhap','HomeController@dangnhap');
 

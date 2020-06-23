@@ -22,8 +22,9 @@ class HomeController extends Controller
         $user = User::all();
 //        dd($user);
         $us = Auth::user();
-//        dd($us);
-        return view('abc');
+
+        dd($us);
+        return view('admin.dashboard');
     }
 
     public function dangnhap()

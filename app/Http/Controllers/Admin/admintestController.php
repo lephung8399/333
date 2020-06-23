@@ -19,8 +19,8 @@ class admintestController extends Controller
     {
         $user = Auth::user();
         $id = Auth::id();
-//        dd($id);
-        return view('admin.dashboard');
+//        dd($user);
+        return view('admin.dashboard', [ 'user' => $user ]);
     }
 
     /**

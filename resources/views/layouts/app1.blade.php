@@ -53,7 +53,8 @@
         <div class="sidebar-wrapper">
             <div class="user">
                 <div class="photo">
-                    <img src="../assets/img/faces/face-2.jpg" />
+{{--                    {{ asset('img/default-avatar.png') }}--}}
+                    <img src="{{ asset('img/default-avatar.png') }}" alt="">
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" class="collapsed">
@@ -136,7 +137,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="#charts">Template</a>
+                    <a class="navbar-brand" href="#charts">Ecko Unltd</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <form class="navbar-form navbar-left navbar-search-form" role="search">
@@ -170,12 +171,26 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#settings" class="btn-rotate">
+                            <a href="#settings" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
                                 <i class="ti-settings"></i>
                                 <p class="hidden-md hidden-lg">
                                     Settings
+                                    <b class="caret"></b>
                                 </p>
                             </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#not1">{{ $user->username }}</a></li>
+                                <li><a href="#not2">Setting</a></li>
+                                <li><a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
