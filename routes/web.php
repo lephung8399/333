@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 //<-- Admin page -->
 Route::group(['prefix'=>'admin', 'namespace' => 'Admin', "middleware" => "auth"],function(){
 
-    Route::get('/testadmin','admintestController@index');
+    Route::get('/','dashboardController@index');
+    Route::get('/profile','dashboardController@profile')->name("admin.profile");
+    Route::post('profile/update/{id}','dashboardController@update')->name("admin.profile.update");
 
 });
 Route::get('/', function () {

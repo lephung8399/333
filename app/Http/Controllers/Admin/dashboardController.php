@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 
 
-class admintestController extends Controller
+class dashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,6 +23,13 @@ class admintestController extends Controller
 //        dd($user);
         return view('admin.dashboard', [ 'user' => $user ]);
     }
+    public function profile()
+    {
+        $user = Auth::user();
+//        dd($user);
+        return view('admin.myProfile', ['user' => $user]);
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -75,7 +83,20 @@ class admintestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+//        dd($request->all());
+        $user = User::find($id);
+        $user->username = request('username');
+        $user->email = request('email');
+        $user->UserFirstName = request('UserFirstName');
+        $user->UserLastName = request('UserLastName');
+        $user->UserAddress = request('UserAddress');
+        $user->UserCity = request('UserCity');
+        $user->UserCountry = request('UserCountry');
+        $user->phone = request('phone');
+        $user->aboutMe = request('aboutMe');
+//        dd($user);
+        $user->save();
+        return redirect()->route('admin.profile');
     }
 
     /**

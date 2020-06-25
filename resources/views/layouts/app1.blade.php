@@ -47,7 +47,7 @@
             </a>
 
             <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                Creative Tim
+                Adminitrator
             </a>
         </div>
         <div class="sidebar-wrapper">
@@ -59,7 +59,7 @@
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" class="collapsed">
 	                        <span>
-								Chet Faker
+								{{ $user->username }}
 		                        <b class="caret"></b>
 							</span>
                     </a>
@@ -137,7 +137,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="#charts">Ecko Unltd</a>
+                    <a class="navbar-brand" href="#charts" style="color: orangered">Ecko Unltd</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <form class="navbar-form navbar-left navbar-search-form" role="search">
