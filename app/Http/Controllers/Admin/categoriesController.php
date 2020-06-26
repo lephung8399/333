@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Category;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-
-
-class dashboardController extends Controller
+class categoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,18 +17,11 @@ class dashboardController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $id = Auth::id();
-//        dd($user);
-        return view('layouts.app1', [ 'user' => $user ]);
+        $cate = Category::all();
+        $user = Auth::user();;
+//        dd($cate);
+        return view('admin.Categories',['user' => $user, 'cate' => $cate] );
     }
-    public function profile()
-    {
-        $user = Auth::user();
-//        dd($user);
-        return view('admin.myProfile', ['user' => $user]);
-    }
-
 
     /**
      * Show the form for creating a new resource.
@@ -83,20 +75,7 @@ class dashboardController extends Controller
      */
     public function update(Request $request, $id)
     {
-//        dd($request->all());
-        $user = User::find($id);
-        $user->username = request('username');
-        $user->email = request('email');
-        $user->UserFirstName = request('UserFirstName');
-        $user->UserLastName = request('UserLastName');
-        $user->UserAddress = request('UserAddress');
-        $user->UserCity = request('UserCity');
-        $user->UserCountry = request('UserCountry');
-        $user->phone = request('phone');
-        $user->aboutMe = request('aboutMe');
-//        dd($user);
-        $user->save();
-        return redirect()->route('admin.profile');
+        //
     }
 
     /**

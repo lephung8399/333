@@ -114,10 +114,28 @@
                 </li>
 
                 <li>
-                    <a href="calendar.html">
-                        <i class="ti-calendar"></i>
-                        <p>Simple Link</p>
+                    <a data-toggle="collapse" href="#dashboardCategory">
+                        <i class="ti-layout-grid2"></i>
+                        <p>Category
+                            <b class="caret"></b>
+                        </p>
                     </a>
+                    <div class="collapse" id="dashboardCategory">
+                        <ul class="nav">
+                            <li>
+                                <a href="#panda">
+                                    <span class="sidebar-mini">C1</span>
+                                    <span class="sidebar-normal">Collapse 1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#panda">
+                                    <span class="sidebar-mini">C2</span>
+                                    <span class="sidebar-normal">Collapse 2</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
 
             </ul>

@@ -20,6 +20,8 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin', "middleware" => "auth"]
     Route::get('/profile','dashboardController@profile')->name("admin.profile");
     Route::post('profile/update/{id}','dashboardController@update')->name("admin.profile.update");
 
+    Route::get('cate','categoriesController@index');
+//    article
 });
 Route::get('/', function () {
     return view('welcome');
