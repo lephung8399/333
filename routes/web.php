@@ -20,8 +20,11 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin', "middleware" => "auth"]
     Route::get('/profile','dashboardController@profile')->name("admin.profile");
     Route::post('profile/update/{id}','dashboardController@update')->name("admin.profile.update");
 
-    Route::get('cate','categoriesController@index');
-//    article
+//    category
+    Route::get('category','categoriesController@index')->name("admin.category");
+    Route::get('category/update/{id?}','categoriesController@update')->name("admin.category.update");
+    Route::post('category/updateProcess/{id}','categoriesController@updateProcess')->name("admin.category.updateProcess");
+    Route::get('category/delete/{id}','categoriesController@destroy')->name("admin.category.delete");
 });
 Route::get('/', function () {
     return view('welcome');

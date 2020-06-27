@@ -28,13 +28,13 @@
                                     <td>{{$categories->CategoryName}}</td>
 {{--                                    <td></td>--}}
                                     <td class="td-actions text-right">
-                                        <a href="#" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
-                                            <i class="ti-user"></i>
-                                        </a>
-                                        <a href="#" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+{{--                                        <a href="#" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">--}}
+{{--                                            <i class="ti-user"></i>--}}
+{{--                                        </a>--}}
+                                        <a href="{{ route('admin.category.update', ['id'=>$categories->CategoryID]) }}" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
                                             <i class="ti-pencil-alt"></i>
                                         </a>
-                                        <a href="#" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                        <a href="{{ route('admin.category.delete', ['id'=>$categories->CategoryID]) }}" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
                                             <i class="ti-close"></i>
                                         </a>
                                     </td>

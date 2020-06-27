@@ -18,9 +18,9 @@ class categoriesController extends Controller
     public function index()
     {
         $cate = Category::all();
-        $user = Auth::user();;
+        $user = Auth::user();
 //        dd($cate);
-        return view('admin.Categories',['user' => $user, 'cate' => $cate] );
+        return view('admin.Categories.Categories',['user' => $user, 'cate' => $cate] );
     }
 
     /**
@@ -75,8 +75,20 @@ class categoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $categoryUpdate = Category::where('CategoryID',$id)->first();
+//        dd($categoryUpdate);
+
+        $user = Auth::user();
+
+        return view('admin.Categories.CategoriesUpdate',['user' => $user, 'categoryUpdate' => $categoryUpdate]);
     }
+    public function updateProcess(Request $request, $id){
+        Category::where('CategoryID', $id)
+            ->update(['CategoryName' => request('CategoryName')]);
+
+        return redirect()->route('admin.category');
+    }
+
 
     /**
      * Remove the specified resource from storage.
@@ -86,6 +98,8 @@ class categoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::where('CategoryID',$id)->delete();
+
+        return redirect()->route('admin.category');
     }
 }
