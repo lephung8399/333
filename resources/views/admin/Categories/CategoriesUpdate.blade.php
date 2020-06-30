@@ -34,6 +34,7 @@
                                         </td>
                                         <td class="td-actions text-right">
                                             <button type="submit" class="btn btn-wd btn-success">Update</button>
+                                            <a href="{{ URL::previous() }}"><button class="btn btn-warning btn-fill btn-wd" type="button" style="display: inline-block">Cancel</button></a>
                                         </td>
                                     </tr>
                                 </form>

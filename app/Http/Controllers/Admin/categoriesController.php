@@ -30,7 +30,8 @@ class categoriesController extends Controller
      */
     public function create()
     {
-        //
+        $user = Auth::user();
+        return view('admin.Categories.CategoriesInsert',['user' => $user]);
     }
 
     /**
@@ -41,7 +42,12 @@ class categoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        dd($request->all());
+        $category = new Category();
+        $category->CategoryName = request('CategoryName');
+        $category->save();
+
+        return redirect()->route('admin.category');
     }
 
     /**

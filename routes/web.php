@@ -25,6 +25,8 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin', "middleware" => "auth"]
     Route::get('category/update/{id?}','categoriesController@update')->name("admin.category.update");
     Route::post('category/updateProcess/{id}','categoriesController@updateProcess')->name("admin.category.updateProcess");
     Route::get('category/delete/{id}','categoriesController@destroy')->name("admin.category.delete");
+    Route::get('category/insert','categoriesController@create')->name("admin.category.insert");
+    Route::post('category/store','categoriesController@store')->name("admin.category.store");
 });
 Route::get('/', function () {
     return view('welcome');
