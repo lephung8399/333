@@ -27,7 +27,7 @@
                                     @csrf
                                     <tr>
                                         <td class="text-center">
-                                            <input type="text" readonly="readonly" name="CategoryID" value="{{$categoryUpdate->CategoryID}}">
+                                            <input type="text" readonly="readonly" style="border: none; padding-left: 15px" name="CategoryID" value="{{$categoryUpdate->CategoryID}}">
                                         </td>
                                         <td>
                                             <input type="text" name="CategoryName" value="{{$categoryUpdate->CategoryName}}">

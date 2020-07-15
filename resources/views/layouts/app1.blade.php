@@ -42,11 +42,11 @@
             Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
         -->
         <div class="logo">
-            <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-                CT
+            <a href="#" class="simple-text logo-mini">
+                AD
             </a>
 
-            <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+            <a href="#" class="simple-text logo-normal">
                 Adminitrator
             </a>
         </div>
@@ -68,13 +68,13 @@
                     <div class="collapse" id="collapseExample">
                         <ul class="nav">
                             <li>
-                                <a href="#profile">
+                                <a href="{{ route('admin.profile') }}">
                                     <span class="sidebar-mini">Mp</span>
                                     <span class="sidebar-normal">My Profile</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#edit">
+                                <a href="{{ route('admin.profile') }}">
                                     <span class="sidebar-mini">Ep</span>
                                     <span class="sidebar-normal">Edit Profile</span>
                                 </a>
@@ -123,15 +123,40 @@
                     <div class="collapse" id="dashboardCategory">
                         <ul class="nav">
                             <li>
-                                <a href="#panda">
-                                    <span class="sidebar-mini">C1</span>
-                                    <span class="sidebar-normal">Collapse 1</span>
+                                <a href="{{ route('admin.category') }}">
+                                    <span class="sidebar-mini">LC</span>
+                                    <span class="sidebar-normal">List Category </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#panda">
-                                    <span class="sidebar-mini">C2</span>
-                                    <span class="sidebar-normal">Collapse 2</span>
+                                <a href="{{ route('admin.category.insert') }}">
+                                    <span class="sidebar-mini">NC</span>
+                                    <span class="sidebar-normal">New Category </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" href="#dashboardProduct">
+                        <i class="ti-package"></i>
+                        <p>Product
+                            <b class="caret"></b>
+                        </p>
+                    </a>
+                    <div class="collapse" id="dashboardProduct">
+                        <ul class="nav">
+                            <li>
+                                <a href="{{ route('admin.products') }}">
+                                    <span class="sidebar-mini">CL</span>
+                                    <span class="sidebar-normal"> List Product</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route("admin.product.create") }}">
+                                    <span class="sidebar-mini">NP</span>
+                                    <span class="sidebar-normal">New Product </span>
                                 </a>
                             </li>
                         </ul>
@@ -230,24 +255,29 @@
                 <nav class="pull-left">
                     <ul>
                         <li>
-                            <a href="http://www.creative-tim.com">
-                                Creative Tim
+                            <a href="http://fb.com/hunglephu83" target="_blank">
+                                <span class="ti-facebook"></span><span class="icon-name">Phu Hung</span>
                             </a>
                         </li>
                         <li>
-                            <a href="http://blog.creative-tim.com">
-                                Blog
+                            <a href="http://fb.com/yuzumi.s.99" target="_blank">
+                                <span class="ti-facebook"></span><span class="icon-name"> Nguyễn Huyền</span>
                             </a>
                         </li>
                         <li>
-                            <a href="http://www.creative-tim.com/license">
-                                Licenses
+                            <a href="https://github.com/lephung8399" target="_blank">
+                                <span class="ti-github"></span><span class="icon-name"> Github</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/" target="_blank">
+                                <span class="ti-stack-overflow"></span><span class="icon-name"> Stack overflow</span>
                             </a>
                         </li>
                     </ul>
                 </nav>
                 <div class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.fb.com/hunglephu83">Phu Hung</a>
+                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.fb.com/hunglephu83" target="_blank"">Phu Hung</a>
                 </div>
             </div>
         </footer>
@@ -270,7 +300,7 @@
 <!--  Forms Validations Plugin -->
 <script src="{{ asset('js/jquery.validate.min.js') }}" defer></script>
 
-<script src="../assets/js/jquery.validate.min.js"></script>
+{{--<script src="../assets/js/jquery.validate.min.js"></script>--}}
 
 <!-- Promise Library for SweetAlert2 working on IE -->
 {{--<script src="../assets/js/es6-promise-auto.min.js"></script>--}}
@@ -283,7 +313,9 @@
 
 
 <!--  Date Time Picker Plugin is included in this js file -->
-<script src="../assets/js/bootstrap-datetimepicker.js"></script>
+{{--<script src="../assets/js/bootstrap-datetimepicker.js"></script>--}}
+<script src="{{ asset('js/bootstrap-datetimepicker.js') }}" defer></script>
+
 
 <!--  Select Picker Plugin -->
 <script src="{{ asset('js/bootstrap-selectpicker.js') }}" defer></script>

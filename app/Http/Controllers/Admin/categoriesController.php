@@ -107,5 +107,6 @@ class categoriesController extends Controller
         Category::where('CategoryID',$id)->delete();
 
         return redirect()->route('admin.category');
+
     }
 }

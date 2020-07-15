@@ -27,6 +27,14 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin', "middleware" => "auth"]
     Route::get('category/delete/{id}','categoriesController@destroy')->name("admin.category.delete");
     Route::get('category/insert','categoriesController@create')->name("admin.category.insert");
     Route::post('category/store','categoriesController@store')->name("admin.category.store");
+
+//    Products
+    Route::get('/products','ProductController@index')->name("admin.products");
+    Route::get('/products/create','ProductController@create')->name("admin.product.create");
+    Route::post('/products/store','ProductController@store')->name("admin.product.store");
+    Route::get('/products/delete/{ProductID}','ProductController@destroy')->name("admin.product.delete");
+    Route::get('/products/edit/{ProductID}','ProductController@edit')->name("admin.product.edit");
+    Route::post('/products/update/{ProductID}','ProductController@update')->name("admin.product.update");
 });
 Route::get('/', function () {
     return view('welcome');
