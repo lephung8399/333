@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use DB;
 
 class ProductController extends Controller
 {
@@ -20,6 +21,16 @@ class ProductController extends Controller
     {
         $products = Product::all();
         $user = Auth::user();
+//        $cate_id =  DB::table('products')->select('ProductID')->get();
+//        $cate_id = Category::findOrFail(1);
+//        $cate_id = DB::table('productcategories')->where('CategoryID', '=', 1)->get();
+//        $cate_name = DB::table('productcategories')
+//            ->join('products', 'products.ProductCategoryID', '=', 'productcategories.CategoryID')
+//            ->select('productcategories.CategoryName')
+//            ->where('products.ProductCategoryID','=',$cate_id)
+//            ->get();
+//        dd($cate_name);
+
 
 //        dd($products);
         return view('admin.Products.productList',['user' => $user, 'products' => $products]);
@@ -143,7 +154,7 @@ class ProductController extends Controller
 
         $product->save();
 //        Product::where('ProductID', $ProductID)
-//            ->update([
+//            ->update([ep
 //                'ProductImage' = $name,
 //                'ProductName' = request('ProductName'),
 //                'ProductPrice' = request('ProductPrice'),

@@ -35,6 +35,9 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin', "middleware" => "auth"]
     Route::get('/products/delete/{ProductID}','ProductController@destroy')->name("admin.product.delete");
     Route::get('/products/edit/{ProductID}','ProductController@edit')->name("admin.product.edit");
     Route::post('/products/update/{ProductID}','ProductController@update')->name("admin.product.update");
+
+//    Orders
+    Route::get('/orders','ordersController@index')->name("admin.orders");
 });
 Route::get('/', function () {
     return view('welcome');

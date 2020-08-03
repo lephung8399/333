@@ -54,7 +54,7 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label>SKU</label>
-                                            <input type="text" class="form-control border-input" name="ProductSKU" placeholder="Press SKU..." value="">
+                                            <input type="text" class="form-control border-input" name="ProductSKU" placeholder="Press SKU..." value="000-00">
                                         </div>
                                     </div>
                                     <div class="col-md-3">

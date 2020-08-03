@@ -35,7 +35,7 @@
                                         <td class="text-center">{{ $product->ProductSKU }}</td>
                                         <td class="text-center">{{ $product->ProductName }}</td>
                                         <td class="text-center">{{ $product->ProductCategoryID }}</td>
-                                        <td class="text-center">{{ $product->ProductPrice }} VNĐ</td>
+                                        <td class="text-center">{{ number_format($product->ProductPrice) }} VNĐ</td>
                                         <td class="text-center">
                                             <img src="{{ asset('images/' .$product->ProductImage) }}" alt="" style="width=100px; height:100px">
                                         </td>

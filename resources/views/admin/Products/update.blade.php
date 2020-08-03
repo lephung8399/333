@@ -10,7 +10,7 @@
                         <div class="card-content">
                             <img src="{{ asset('images/' .$updateProduct->ProductImage) }}" alt="..." height="100%" "/>
                         </div>
-                        <input type="file" name="anh[]" class="form-control" value="{{ $updateProduct->ProductImage }}">
+                        <input type="file" name="anh[]" class="form-control" value="{{ $updateProduct->ProductImage }}" >
 
                     </div>
                 </div>
