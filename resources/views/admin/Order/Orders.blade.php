@@ -53,7 +53,7 @@
                         <td>$38,735</td>
                         <td>Korea, South</td>
                         <td>Overland Park</td>
-                        <td></td>
+                        <td><a rel="tooltip" title="Remove" class="btn btn-simple btn-danger btn-icon table-action remove" href="javascript:void(0)"><i class="ti-close"></i></a></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -71,7 +71,7 @@
                         <td>$78,615</td>
                         <td>Chile</td>
                         <td>Gloucester</td>
-                        <td></td>
+                        <td><a rel="tooltip" title="Remove" class="btn btn-simple btn-danger btn-icon table-action remove" href="javascript:void(0)"><i class="ti-close"></i></a></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -80,7 +80,7 @@
                         <td>$63,929</td>
                         <td>Finland</td>
                         <td>Gary</td>
-                        <td></td>
+                        <td><a rel="tooltip" title="Remove" class="btn btn-simple btn-danger btn-icon table-action remove" href="javascript:void(0)"><i class="ti-close"></i></a></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -107,7 +107,7 @@
                         <td>$93,148</td>
                         <td>Cayman Islands</td>
                         <td>Cottbus</td>
-                        <td></td>
+                        <td><<a rel="tooltip" title="Remove" class="btn btn-simple btn-danger btn-icon table-action remove" href="javascript:void(0)"><i class="ti-close"></i></a>/td>
                     </tr>
                     <tr>
                         <td></td>
@@ -116,7 +116,7 @@
                         <td>$5,502</td>
                         <td>Romania</td>
                         <td>New Quay</td>
-                        <td></td>
+                        <td><a rel="tooltip" title="Remove" class="btn btn-simple btn-danger btn-icon table-action remove" href="javascript:void(0)"><i class="ti-close"></i></a></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -134,7 +134,7 @@
                         <td>$67,413</td>
                         <td>Montenegro</td>
                         <td>Pontevedra</td>
-                        <td></td>
+                        <td><a rel="tooltip" title="Remove" class="btn btn-simple btn-danger btn-icon table-action remove" href="javascript:void(0)"><i class="ti-close"></i></a></td>
                     </tr>
                     </tbody>
                 </table>
