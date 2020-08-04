@@ -141,7 +141,7 @@
                 <li>
                     <a data-toggle="collapse" href="#dashboardProduct">
                         <i class="ti-package"></i>
-                        <p>Product
+                        <p>Products
                             <b class="caret"></b>
                         </p>
                     </a>
@@ -159,6 +159,31 @@
                                     <span class="sidebar-normal">New Product </span>
                                 </a>
                             </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" href="#dashboardOrders">
+                        <i class="ti-package"></i>
+                        <p>Orders
+                            <b class="caret"></b>
+                        </p>
+                    </a>
+                    <div class="collapse" id="dashboardOrders">
+                        <ul class="nav">
+                            <li>
+                                <a href="{{ route('admin.orders') }}">
+                                    <span class="sidebar-mini">LO</span>
+                                    <span class="sidebar-normal"> List Orders</span>
+                                </a>
+                            </li>
+{{--                            <li>--}}
+{{--                                <a href="{{ route("admin.product.create") }}">--}}
+{{--                                    <span class="sidebar-mini">NP</span>--}}
+{{--                                    <span class="sidebar-normal">New Product </span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
                         </ul>
                     </div>
                 </li>
@@ -286,10 +311,10 @@
 </body>
 
 <!--   Core JS Files. Extra: TouchPunch for touch library inside jquery-ui.min.js   -->
-<script src="{{ asset('js/jquery-3.1.1.min.js') }}" defer></script>
-<script src="{{ asset('js/jquery-ui.min.js') }}" defer></script>
-<script src="{{ asset('js/perfect-scrollbar.min.js') }}" defer></script>
-<script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
+<script src="{{ asset('js/jquery-3.1.1.min.js') }}" ></script>
+<script src="{{ asset('js/jquery-ui.min.js') }}" ></script>
+<script src="{{ asset('js/perfect-scrollbar.min.js') }}" ></script>
+<script src="{{ asset('js/bootstrap.min.js') }}" ></script>
 
 
 {{--<script src="../assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>--}}
@@ -298,42 +323,42 @@
 {{--<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>--}}
 
 <!--  Forms Validations Plugin -->
-<script src="{{ asset('js/jquery.validate.min.js') }}" defer></script>
+<script src="{{ asset('js/jquery.validate.min.js') }}" ></script>
 
 {{--<script src="../assets/js/jquery.validate.min.js"></script>--}}
 
 <!-- Promise Library for SweetAlert2 working on IE -->
 {{--<script src="../assets/js/es6-promise-auto.min.js"></script>--}}
-<script src="{{ asset('js/es6-promise-auto.min.js') }}" defer></script>
+<script src="{{ asset('js/es6-promise-auto.min.js') }}" ></script>
 
 
 <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
 {{--<script src="../assets/js/moment.min.js"></script>--}}
-<script src="{{ asset('js/moment.min.js') }}" defer></script>
+<script src="{{ asset('js/moment.min.js') }}" ></script>
 
 
 <!--  Date Time Picker Plugin is included in this js file -->
 {{--<script src="../assets/js/bootstrap-datetimepicker.js"></script>--}}
-<script src="{{ asset('js/bootstrap-datetimepicker.js') }}" defer></script>
+<script src="{{ asset('js/bootstrap-datetimepicker.js') }}" ></script>
 
 
 <!--  Select Picker Plugin -->
-<script src="{{ asset('js/bootstrap-selectpicker.js') }}" defer></script>
+<script src="{{ asset('js/bootstrap-selectpicker.js') }}" ></script>
 
 {{--<script src="../assets/js/bootstrap-selectpicker.js"></script>--}}
 
 <!--  Switch and Tags Input Plugins -->
-<script src="{{ asset('js/bootstrap-switch-tags.js') }}" defer></script>
+<script src="{{ asset('js/bootstrap-switch-tags.js') }}" ></script>
 
 {{--<script src="../assets/js/bootstrap-switch-tags.js"></script>--}}
 
 <!-- Circle Percentage-chart -->
-<script src="{{ asset('js/jquery.easypiechart.min.js') }}" defer></script>
+<script src="{{ asset('js/jquery.easypiechart.min.js') }}" ></script>
 
 {{--<script src="../assets/js/jquery.easypiechart.min.js"></script>--}}
 
 <!--  Charts Plugin -->
-<script src="{{ asset('js/chartist.min.js') }}" defer></script>
+<script src="{{ asset('js/chartist.min.js') }}" ></script>
 
 {{--<script src="../assets/js/chartist.min.js"></script>--}}
 
@@ -343,40 +368,40 @@
 {{--<script src="../assets/js/bootstrap-notify.js"></script>--}}
 
 <!-- Sweet Alert 2 plugin -->
-<script src="{{ asset('js/sweetalert2.js') }}" defer></script>
+<script src="{{ asset('js/sweetalert2.js') }}" ></script>
 
 {{--<script src="../assets/js/sweetalert2.js"></script>--}}
 
 <!-- Vector Map plugin -->
-<script src="{{ asset('js/jquery-jvectormap.js') }}" defer></script>
+<script src="{{ asset('js/jquery-jvectormap.js') }}" ></script>
 {{--<script src="../assets/js/jquery-jvectormap.js"></script>--}}
 
 <!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+{{--<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>--}}
 {{--<script src="{{ asset('js/jquery-jvectormap.js') }}" defer></script>--}}
 
 <!-- Wizard Plugin    -->
 {{--<script src="../assets/js/jquery.bootstrap.wizard.min.js"></script>--}}
-<script src="{{ asset('js/jquery.bootstrap.wizard.min.js') }}" defer></script>
+<script src="{{ asset('js/jquery.bootstrap.wizard.min.js') }}" ></script>
 
 <!--  Bootstrap Table Plugin    -->
 {{--<script src="../assets/js/bootstrap-table.js"></script>--}}
-<script src="{{ asset('js/bootstrap-table.js') }}" defer></script>
+<script src="{{ asset('js/bootstrap-table.js') }}" ></script>
 
 <!--  Plugin for DataTables.net  -->
 {{--<script src="../assets/js/jquery.datatables.js"></script>--}}
-<script src="{{ asset('js/jquery.datatables.js') }}" defer></script>
+<script src="{{ asset('js/jquery.datatables.js') }}" ></script>
 
 <!--  Full Calendar Plugin    -->
 {{--<script src="../assets/js/fullcalendar.min.js"></script>--}}
-<script src="{{ asset('js/fullcalendar.min.js') }}" defer></script>
+<script src="{{ asset('js/fullcalendar.min.js') }}" ></script>
 
 <!-- Paper Dashboard PRO Core javascript and methods for Demo purpose -->
 {{--<script src="../assets/js/paper-dashboard.js"></script>--}}
-<script src="{{ asset('js/paper-dashboard.js') }}" defer></script>
+<script src="{{ asset('js/paper-dashboard.js') }}" ></script>
 
 <!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
 {{--<script src="../assets/js/demo.js"></script>--}}
-<script src="{{ asset('js/demo.js') }}" defer></script>
+<script src="{{ asset('js/demo.js') }}" ></script>
 
 </html>
