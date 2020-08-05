@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -12,9 +14,12 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('HomePage.category');
+        $categories_product = Product::where('ProductCategoryID',$id)->get();
+        $cate = Category::where('CategoryID',$id)->get();
+//        dd($cate_product);
+        return view('HomePage.category',['categories_product' => $categories_product]);
     }
 
     /**

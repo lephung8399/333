@@ -68,28 +68,9 @@
                                 <ul>
 
 
-                                    <li class="current-menu-item"><a href="#" class="hover-underline-animation">Home</a></li>
+                                    <li class="current-menu-item"><a href="{{ route('index') }}" class="hover-underline-animation">Home</a></li>
                                     @foreach($categories as $category)
-                                    <li><a href="#" class="hover-underline-animation">{{ $category->CategoryName }}</a>
-                                        <ul>
-                                            <li><a href="#">Sub Menu 1</a></li>
-                                            <li><a href="#">Sub Menu 2</a></li>
-                                            <li><a href="#">Sub Menu 3</a></li>
-                                            <li><a href="#">Sub Menu 4</a>
-{{--                                                <ul>--}}
-{{--                                                    <li><a href="#" class="hover-underline-animation" >Deep Menu 1</a>--}}
-{{--                                                        <ul>--}}
-{{--                                                            <li><a href="#">Sub Deep 1</a></li>--}}
-{{--                                                            <li><a href="#">Sub Deep 2</a></li>--}}
-{{--                                                            <li><a href="#">Sub Deep 3</a></li>--}}
-{{--                                                            <li><a href="#">Sub Deep 4</a></li>--}}
-{{--                                                        </ul>--}}
-{{--                                                    </li>--}}
-{{--                                                    <li><a href="#" class="hover-underline-animation" >Deep Menu 2</a></li>--}}
-{{--                                                </ul>--}}
-                                            </li>
-                                            <li><a href="#" class="hover-underline-animation" >Sub Menu 5</a></li>
-                                        </ul>
+                                    <li><a href="{{ route('category',['id'=>$category->CategoryID]) }}" class="hover-underline-animation">{{ $category->CategoryName }}</a>
                                     </li>
                                     @endforeach
                                     <li><a href="#" class="hover-underline-animation" >Contact Us</a></li>

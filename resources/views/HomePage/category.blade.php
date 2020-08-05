@@ -17,112 +17,74 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-3 items-collection">
-                <div class="collection-item-img">
-                    <img src="{{ asset('images/4.jpeg') }}" style="width: 100%; height:100%" alt="">
+            @foreach($categories_product as $category_product)
+                <div class="col-3 items-collection">
+                    <div class="collection-item-img">
+                        <img src="{{ asset('images/' . $category_product->ProductImage ) }}" style="width: 100%; height:100%" alt="">
+                    </div>
+                    <div class="collection-color-item"></div>
+                    <div class="collection-product-price">
+                        <span class="price">{{$category_product->ProductName}}</span><br>
+                        <span class="price">{{number_format($category_product->ProductPrice)}} VNĐ</span><br>
+                        <span class="price">4 - 11+ card, flat bills, coins</span><br>
+                    </div>
                 </div>
-                <div class="collection-color-item"></div>
-                <div class="collection-product-price">
-                    <span class="price">Note Sleeve</span><br>
-                    <span class="price">89$</span><br>
-                    <span class="price">4 - 11+ card, flat bills, coins</span><br>
-
-                </div>
-            </div>
-
-            <div class="col-3 items-collection">
-                <div class="collection-item-img">
-                    <img src="{{ asset('images/4.jpeg') }}" style="width: 100%; height:100%" alt="">
-                </div>
-                <div class="collection-color-item"></div>
-                <div class="collection-product-price">
-                    <span class="price">Note Sleeve</span><br>
-                    <span class="price">89$</span><br>
-                    <span class="price">4 - 11+ card, flat bills, coins</span><br>
-
-                </div>
-            </div>
-
-            <div class="col-3 items-collection">
-                <div class="collection-item-img">
-                    <img src="{{ asset('images/4.jpeg') }}" style="width: 100%; height:100%" alt="">
-                </div>
-                <div class="collection-color-item"></div>
-                <div class="collection-product-price">
-                    <span class="price">Note Sleeve</span><br>
-                    <span class="price">89$</span><br>
-                    <span class="price">4 - 11+ card, flat bills, coins</span><br>
-
-                </div>
-            </div>
-
-            <div class="col-3 items-collection">
-                <div class="collection-item-img">
-                    <img src="{{ asset('images/4.jpeg') }}" style="width: 100%; height:100%" alt="">
-                </div>
-                <div class="collection-color-item"></div>
-                <div class="collection-product-price">
-                    <span class="price">Note Sleeve</span><br>
-                    <span class="price">89$</span><br>
-                    <span class="price">4 - 11+ card, flat bills, coins</span><br>
-
-                </div>
-            </div>
+            @endforeach
         </div>
 
-        <div class="row">
-            <div class="col-3 items-collection">
-                <div class="collection-item-img">
-                    <img src="{{ asset('images/4.jpeg') }}" style="width: 100%; height:100%" alt="">
-                </div>
-                <div class="collection-color-item"></div>
-                <div class="collection-product-price">
-                <span><b>Note Sleeve</b>
-                    <br> <b>89$</b>
-                    <br> 4 - 11+ card, flat bills, coins
-                </span>
-                </div>
-            </div>
+{{--        <div class="row">--}}
+{{--            <div class="col-3 items-collection">--}}
+{{--                <div class="collection-item-img">--}}
+{{--                    <img src="{{ asset('images/4.jpeg') }}" style="width: 100%; height:100%" alt="">--}}
+{{--                </div>--}}
+{{--                <div class="collection-color-item"></div>--}}
+{{--                <div class="collection-product-price">--}}
+{{--                <span><b>Note Sleeve</b>--}}
+{{--                    <br> <b>89$</b>--}}
+{{--                    <br> 4 - 11+ card, flat bills, coins--}}
+{{--                </span>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="col-3 items-collection">
-                <div class="collection-item-img">
-                    <img src="{{ asset('images/4.jpeg') }}" style="width: 100%; height:100%" alt="">
-                </div>
-                <div class="collection-color-item"></div>
-                <div class="collection-product-price">
-                <span><b>Note Sleeve</b>
-                    <br> <b>89$</b>
-                    <br> 4 - 11+ card, flat bills, coins
-                </span>
-                </div>
-            </div>
+{{--            <div class="col-3 items-collection">--}}
+{{--                <div class="collection-item-img">--}}
+{{--                    <img src="{{ asset('images/4.jpeg') }}" style="width: 100%; height:100%" alt="">--}}
+{{--                </div>--}}
+{{--                <div class="collection-color-item"></div>--}}
+{{--                <div class="collection-product-price">--}}
+{{--                <span><b>Note Sleeve</b>--}}
+{{--                    <br> <b>89$</b>--}}
+{{--                    <br> 4 - 11+ card, flat bills, coins--}}
+{{--                </span>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="col-3 items-collection">
-                <div class="collection-item-img">
-                    <img src="{{ asset('images/4.jpeg') }}" style="width: 100%; height:100%" alt="">
-                </div>
-                <div class="collection-color-item"></div>
-                <div class="collection-product-price">
-                <span><b>Note Sleeve</b>
-                    <br> <b>89$</b>
-                    <br> 4 - 11+ card, flat bills, coins
-                </span>
-                </div>
-            </div>
+{{--            <div class="col-3 items-collection">--}}
+{{--                <div class="collection-item-img">--}}
+{{--                    <img src="{{ asset('images/4.jpeg') }}" style="width: 100%; height:100%" alt="">--}}
+{{--                </div>--}}
+{{--                <div class="collection-color-item"></div>--}}
+{{--                <div class="collection-product-price">--}}
+{{--                <span><b>Note Sleeve</b>--}}
+{{--                    <br> <b>89$</b>--}}
+{{--                    <br> 4 - 11+ card, flat bills, coins--}}
+{{--                </span>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="col-3 items-collection">
-                <div class="collection-item-img">
-                    <img src="{{ asset('images/4.jpeg') }}" style="width: 100%; height:100%" alt="">
-                </div>
-                <div class="collection-color-item"></div>
-                <div class="collection-product-price">
-                <span><b>Note Sleeve</b>
-                    <br> <b>89$</b>
-                    <br> 4 - 11+ card, flat bills, coins
-                </span>
-                </div>
-            </div>
-        </div>
+{{--            <div class="col-3 items-collection">--}}
+{{--                <div class="collection-item-img">--}}
+{{--                    <img src="{{ asset('images/4.jpeg') }}" style="width: 100%; height:100%" alt="">--}}
+{{--                </div>--}}
+{{--                <div class="collection-color-item"></div>--}}
+{{--                <div class="collection-product-price">--}}
+{{--                <span><b>Note Sleeve</b>--}}
+{{--                    <br> <b>89$</b>--}}
+{{--                    <br> 4 - 11+ card, flat bills, coins--}}
+{{--                </span>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 
 
