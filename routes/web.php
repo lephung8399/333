@@ -53,9 +53,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix'=>'HomePage','namespace'=> 'Home'],function(){
+    Route::get('/','HomePageController@index');
+    Route::get('products','ProductsController@index');
+    Route::get('category','CategoryController@index');
+});
+
 
 
 
