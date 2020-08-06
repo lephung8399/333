@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use DB;
 
 
 class ProductsController extends Controller
@@ -13,9 +16,26 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($ProductID)
     {
-        return view('HomePage.products');
+        $product = Product::where('ProductID',$ProductID)->get();
+        $product_id_cate = DB::table('products')
+            ->select('ProductCategoryID')
+            ->where('ProductID', '=', $ProductID)
+            ->get();
+//        dd($product_id_cate);
+//        $product_cate = DB::table('productcategories')
+//            ->where('CategoryID', '=', $product_id_cate)
+//            ->get();
+//        $product_cate = Category::findorfail($product_id_cate);
+//        dd($product_cate);
+        return view('HomePage.products',['product' => $product]);
+    }
+
+    public function all(){
+        $products = Product::all();
+//        dd($products);
+        return view('HomePage.all',['products' => $products]);
     }
 
     /**

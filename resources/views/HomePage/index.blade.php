@@ -4,9 +4,13 @@
     <div class="main">
         <div class="main-banner" style="width: 100%;">
         <span class="mainBanner__link__content">
-              <h1 style="font-size: 70px; color: #ffffff;"><a href="#" style="text-decoration: none; font-family: auto;color: #ffffff;">Your day, Sorted</a></h1>
+              <h1 style="font-size: 70px; color: #ffffff;"><a href="{{ route('products.all') }}" style="text-decoration: none; font-family: auto;color: #ffffff;">Your day, Sorted</a></h1>
               <br>
-              <button type="button" class="btn btn-light" style="letter-spacing: 4px; font-size: 12px;">SHOP THE RANGE</button>
+              <button type="button" class="btn btn-light" style="letter-spacing: 4px; font-size: 12px;">
+                  <a href="{{ route('products.all') }}" style="text-decoration: none;color: inherit;">
+                  SHOP THE RANGE
+                  </a>
+              </button>
         </span>
         </div>
 

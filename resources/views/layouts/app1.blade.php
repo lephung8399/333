@@ -31,6 +31,7 @@
 {{--    <link href="../assets/css/themify-icons.css" rel="stylesheet">--}}
     <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
 
+    <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
 
 </head>
 

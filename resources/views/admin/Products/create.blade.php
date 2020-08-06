@@ -69,7 +69,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <textarea rows="5" class="form-control border-input" name="ProductDescription" placeholder="Here can be your description" value="">
+                                            <textarea id="editor" rows="5" class="form-control border-input" name="ProductDescription" placeholder="Here can be your description" value="">
 
                                             </textarea>
                                         </div>
@@ -85,4 +85,11 @@
             </form>
         </div>
     </div>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 @endsection

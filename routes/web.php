@@ -59,8 +59,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix'=>'HomePage','namespace'=> 'Home'],function(){
     Route::get('/','HomePageController@index')->name('index');
-    Route::get('products','ProductsController@index')->name('products');
+    Route::get('products/{ProductID}','ProductsController@index')->name('products');
     Route::get('category/{id}','CategoryController@index')->name('category');
+    Route::get('all','ProductsController@all')->name('products.all');
 });
 
 

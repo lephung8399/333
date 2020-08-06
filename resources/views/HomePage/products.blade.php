@@ -5,7 +5,7 @@
 <div class="frame">
     <div class="container breadcrum">
         <div class="row breadcrum-detail">
-            <a href="#" class="a-breadcrum-detail">Home</a> / <a href="#" class="a-breadcrum-detail">Accessory</a> / <a href="#" class="a-breadcrum-detail">Case</a>
+            <a href="{{ route('index') }}" class="a-breadcrum-detail">Home</a> / <a href="#" class="a-breadcrum-detail">@foreach($product as $product_name) {{ $product_name->ProductName }} @endforeach</a>
         </div>
     </div>
     <div class="info-product">
@@ -13,21 +13,11 @@
             <div class="row">
                 <div class="col-8 product-gallery">
                     <div class="product-gallery-top">
+                        @foreach($product as $product_image)
                         <div class="mySlides">
-                            <img src="{{ asset('images/my-ava.jpg') }}" class="image-top" id="myimage">
+                            <img src="{{ asset('images/' . $product_image->ProductImage ) }}" class="image-top" id="myimage">
                         </div>
-
-                        <div class="mySlides">
-                            <img src="{{ asset('images/my-ava.jpg') }}" class="image-top" id="myimage">
-                        </div>
-
-                        <div class="mySlides">
-                            <img src="{{ asset('images/0.jpeg') }}" class="image-top" id="myimage">
-                        </div>
-
-                        <div class="mySlides">
-                            <img src="{{ asset('images/my-ava.jpg') }}" class="image-top" id="myimage">
-                        </div>
+                        @endforeach
                     </div>
 
                     <div class="product-gallery-space"></div>
@@ -35,55 +25,78 @@
                     <div class="product-gallery-bottom">
                         <div class="container">
                             <div class="row">
+                                @foreach($product as $product_image)
                                 <div class="col-2 mini-img-frame">
-                                    <img class="demo cursor image-bottom" src="{{ asset('images/my-ava.jpg') }}"  class="image-bottom" onclick="currentSlide(1)" alt="The Woods" id="myimage">
+                                    <img class="demo cursor image-bottom" src="{{ asset('images/' . $product_image->ProductImage ) }}"  class="image-bottom" onclick="currentSlide(1)" alt="The Woods" id="myimage">
                                 </div>
-                                <div class="col-2 mini-img-frame">
-                                    <img class="demo cursor image-bottom" src="{{ asset('images/my-ava.jpg') }}"  onclick="currentSlide(2)" alt="Cinque Terre" id="myimage">
-                                </div>
-                                <div class="col-2 mini-img-frame">
-                                    <img class="demo cursor image-bottom" src="{{ asset('images/0.jpeg') }}"  onclick="currentSlide(3)" alt="Mountains and fjords" id="myimage">
-                                </div>
-                                <div class="col-2 mini-img-frame">
-                                    <img class="demo cursor image-bottom" src="{{ asset('images/xocvan.jpg') }}" onclick="currentSlide(4)" alt="Northern Lights" id="myimage">
-                                </div>
-                                <div class="col-2 mini-img-frame">
-                                    <img class="demo cursor image-bottom" src="{{ asset('images/xocvan.jpg') }}" onclick="currentSlide(4)" alt="Northern Lights" id="myimage">
-                                </div>
-                                <div class="col-2 mini-img-frame">
-                                    <img class="demo cursor image-bottom" src="{{ asset('images/xocvan.jpg') }}" onclick="currentSlide(4)" alt="Northern Lights" id="myimage">
-                                </div>
-                                <div class="col-2 mini-img-frame">
-                                    <img class="demo cursor image-bottom" src="{{ asset('images/xocvan.jpg') }}" onclick="currentSlide(4)" alt="Northern Lights" id="myimage">
-                                </div>
-                                <div class="col-2 mini-img-frame">
-                                    <img class="demo cursor image-bottom" src="{{ asset('images/xocvan.jpg') }}" onclick="currentSlide(4)" alt="Northern Lights" id="myimage">
-                                </div>
-                                <div class="col-2 mini-img-frame">
-                                    <img class="demo cursor image-bottom" src="{{ asset('images/xocvan.jpg') }}" onclick="currentSlide(4)" alt="Northern Lights" id="myimage">
-                                </div>
-                                <div class="col-2 mini-img-frame">
-                                    <img class="demo cursor image-bottom" src="{{ asset('images/xocvan.jpg') }}" onclick="currentSlide(4)" alt="Northern Lights" id="myimage">
-                                </div>
-
+                                @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-4 product-selector">
+                    @foreach($product as $product_detail)
                     <h1 style="line-height: 27px; color: grey; font-size: 24px">
-                        Name Product
+                        {{ $product_detail->ProductName }}
                     </h1>
+                        <strong>{{ number_format($product_detail->ProductPrice) }} </strong> VNĐ
                     <hr >
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">SELECT SIZE:</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
+                        <button type="button" class="btn btn-outline-info" style="width:100%; display: inline">
+                            <strong>
+                                <img src="https://img.icons8.com/fluent/24/000000/add-shopping-cart.png" style="margin-bottom: 6px" />
+                                ADD TO CART
+                            </strong>
+                        </button>
+                      <br>
+                        {{ $product_detail->ProductDescription }}
+
+                    @endforeach
+
+{{--                    collapse--}}
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Collapsible Group Item #1
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Collapsible Group Item #2
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Collapsible Group Item #3
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -11,24 +11,26 @@
     </div>
     <div class="container">
         <div class="row wrapper">
-            <div class="col-6"><b>Home / iPhone 11 Cases</b></div>
+            <div class="col-6"><b><a href="{{ route('index') }}">Home</a> / <a href="#">@foreach($cate as $cateName){{ $cateName->CategoryName }} @endforeach</a></b></div>
             <div class="col-6"></div>
         </div>
     </div>
     <div class="container-fluid">
         <div class="row">
             @foreach($categories_product as $category_product)
-                <div class="col-3 items-collection">
-                    <div class="collection-item-img">
-                        <img src="{{ asset('images/' . $category_product->ProductImage ) }}" style="width: 100%; height:100%" alt="">
+                    <div class="col-3 items-collection">
+                        <a href="{{ route('products',['ProductID'=>$category_product->ProductID]) }}" >
+                            <div class="collection-item-img">
+                                <img src="{{ asset('images/' . $category_product->ProductImage ) }}" style="width: 100%; height:100%" alt="">
+                            </div>
+                            <div class="collection-color-item"></div>
+                            <div class="collection-product-price">
+                                <span class="price">{{$category_product->ProductName}}</span><br>
+                                <span class="price">{{number_format($category_product->ProductPrice)}} VNĐ</span><br>
+                                <span class="price">4 - 11+ card, flat bills, coins</span><br>
+                            </div>
+                        </a>
                     </div>
-                    <div class="collection-color-item"></div>
-                    <div class="collection-product-price">
-                        <span class="price">{{$category_product->ProductName}}</span><br>
-                        <span class="price">{{number_format($category_product->ProductPrice)}} VNĐ</span><br>
-                        <span class="price">4 - 11+ card, flat bills, coins</span><br>
-                    </div>
-                </div>
             @endforeach
         </div>
 

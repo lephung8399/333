@@ -20,6 +20,8 @@
     <script src="OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
     <script src="{{ asset('OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js') }}"></script>
     <script src="{{ asset('OwlCarousel2-2.3.4/dist/owl.carousel.min.js') }}"></script>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
     <title>Ecko Unltd</title>
     <style>
         ::-webkit-scrollbar {
@@ -81,12 +83,22 @@
                 </div>
                 <div class="col-4">
                     <div class="row">
-                        <div class="col-8"></div>
-                        <div class="col-4">
-                            <a href="#"><img src="https://img.icons8.com/material-outlined/30/000000/important-mail.png" style="margin-top:24px"/></a>
-                            <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/000000/search.png" style="margin-top: 24px; margin-left: 10px;"/></a>
-                            <a href="#"><img src="https://img.icons8.com/ios/30/000000/shopping-cart-loaded.png" style="margin-top: 24px; margin-left: 10px;"/></a>
-                        </div>
+
+                            <div class="col-10">
+                                <form action="">
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <input type="text" class="form-control" style="margin-top: 20px" placeholder="S e a r c h i n g . . .">
+                                        </div>
+                                        <div class="col-2">
+                                           <button type="submit" style="border: none; background: inherit"><img src="https://img.icons8.com/ios-glyphs/30/000000/search.png" style="margin-top: 24px; margin-left: 10px;"/></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-2">
+                                <a href="#"><img src="https://img.icons8.com/ios/30/000000/shopping-cart-loaded.png" style="margin-top: 24px; margin-left: 10px;"/></a>
+                            </div>
                     </div>
 
                 </div>

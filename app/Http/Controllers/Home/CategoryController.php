@@ -18,8 +18,8 @@ class CategoryController extends Controller
     {
         $categories_product = Product::where('ProductCategoryID',$id)->get();
         $cate = Category::where('CategoryID',$id)->get();
-//        dd($cate_product);
-        return view('HomePage.category',['categories_product' => $categories_product]);
+//        dd($cate);
+        return view('HomePage.category',['categories_product' => $categories_product, 'cate' => $cate]);
     }
 
     /**
