@@ -16,6 +16,10 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function payment(){
+        return view('HomePage.payment');
+    }
+
     public function index($ProductID)
     {
         $product = Product::where('ProductID',$ProductID)->get();

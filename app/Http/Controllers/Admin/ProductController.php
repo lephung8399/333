@@ -35,7 +35,6 @@ class ProductController extends Controller
 //        dd($products);
         return view('admin.Products.productList',['user' => $user, 'products' => $products]);
     }
-
     /**
      * Show the form for creating a new resource.
      *

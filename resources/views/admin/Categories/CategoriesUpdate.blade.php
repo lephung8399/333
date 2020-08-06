@@ -16,14 +16,14 @@
                             <tr>
                                 <th class="text-center">ID</th>
                                 <th>Category Name</th>
-                                {{--                                <th>Category Name</th>--}}
+                                <th>Category Image</th>
                                 {{--                                <th class="text-right">Salary</th>--}}
                                 <th class="text-right">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
 {{--                            {{dd($categoryUpdate)}}--}}
-                                <form action="{{ route('admin.category.updateProcess',$categoryUpdate->CategoryID) }}" method="POST">
+                                <form action="{{ route('admin.category.updateProcess',$categoryUpdate->CategoryID) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <tr>
                                         <td class="text-center">
@@ -32,6 +32,9 @@
                                         <td>
                                             <input type="text" name="CategoryName" value="{{$categoryUpdate->CategoryName}}">
                                         </td>
+{{--                                        <td>--}}
+{{--                                            <input type="file" name="anh[]" class="form-control">--}}
+{{--                                        </td>--}}
                                         <td class="td-actions text-right">
                                             <button type="submit" class="btn btn-wd btn-success">Update</button>
                                             <a href="{{ URL::previous() }}"><button class="btn btn-warning btn-fill btn-wd" type="button" style="display: inline-block">Cancel</button></a>

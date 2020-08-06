@@ -43,7 +43,25 @@ class categoriesController extends Controller
     public function store(Request $request)
     {
 //        dd($request->all());
+        $this->validate($request, [
+
+            'anh' => 'required',
+            'anh.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+
+        ]);
+
+        if($request->hasfile('anh'))
+        {
+
+            foreach($request->file('anh') as $image)
+            {
+                $name=$image->getClientOriginalName();
+                $image->move(public_path().'/images/', $name);
+            }
+        }
+
         $category = new Category();
+        $category->CategoryImage = $name;
         $category->CategoryName = request('CategoryName');
         $category->save();
 

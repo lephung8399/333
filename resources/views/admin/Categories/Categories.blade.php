@@ -34,6 +34,7 @@
                                 <tr>
                                     <td class="text-center">{{$categories->CategoryID}}</td>
                                     <td>{{$categories->CategoryName}}</td>
+
 {{--                                    <td></td>--}}
                                     <td class="td-actions text-right">
 {{--                                        <a href="#" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">--}}

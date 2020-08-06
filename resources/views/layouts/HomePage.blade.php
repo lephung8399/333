@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/product.css') }}">
     <link rel="stylesheet" href="{{ asset('css/collection.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
 
 
     <link rel="icon" type="image/png" href="{{ asset('images/Ecko_Unltd-logo-5A7FE2931C-seeklogo.com.png') }}"/>
